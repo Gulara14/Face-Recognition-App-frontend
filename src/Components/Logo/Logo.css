@@ -1,0 +1,15 @@
+.Tilt {
+    height: 8em;
+    width: 8em;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(89deg, #de9ac8 0%, #ba6e7c 100%)
+}
+
+.inner-element {
+    margin: auto;
+    padding: 0;
+}

@@ -1,4 +1,6 @@
 import React from "react";
+//import PropTypes from 'prop-types';
+
 
 class Signin extends React.Component {
     constructor(props) {
@@ -18,7 +20,7 @@ class Signin extends React.Component {
     }
 
     onSubmitSignIn = () => {
-        fetch("http://localhost:3000/signin", {
+        fetch("https://localhost:3000/signin", {
             method: "post",
             headers: {'Content-Type': "application/json"},
             body: JSON.stringify({
@@ -27,10 +29,11 @@ class Signin extends React.Component {
             })
         })
             .then(response => response.json())
-            .then(user => { //does the user exist? did we receive a user with a property of id?
+            .then(user => { 
                 if (user.id) {
+                    /* eslint-disable react/prop-types */
                     this.props.loadUser(user);
-                    this.props.onRouteChange('home');
+                    this.props.onRouteChange('home')
                 }
             })
     }
@@ -80,5 +83,10 @@ class Signin extends React.Component {
         ); 
     }
 }
+
+
+// const Signin.propTypes = {
+//     onSubmitSignIn: propTypes.any.isRequired
+// }
 
 export default Signin;

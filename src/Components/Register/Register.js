@@ -1,4 +1,5 @@
 import React from "react";
+//import PropTypes from 'prop-types';
 
 class Register extends React.Component {
     constructor(props) {
@@ -22,7 +23,7 @@ class Register extends React.Component {
     }
 
     onSubmitSignIn = () => {
-        fetch("http://localhost:3000/register", {
+        fetch("https://localhost:3000/register", {
             method: "post",
             headers: {'Content-Type': "application/json"},
             body: JSON.stringify({
@@ -33,9 +34,10 @@ class Register extends React.Component {
         })
             .then(response => response.json())
             .then(user => {
-                if (user) {
-                    this.props.loadUser(user);
-                    this.props.onRouteChange('home');
+                if (user.id) {
+                    /* eslint-disable react/prop-types */
+                    this.props.loadUser(user)
+                    this.props.onRouteChange('home')
                 }
             })
     }
@@ -89,7 +91,8 @@ class Register extends React.Component {
                 </main>
             </article>
         ) 
-    };
+    }
 }
+
 
 export default Register;

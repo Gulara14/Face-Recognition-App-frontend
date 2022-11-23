@@ -75,7 +75,7 @@ class App extends Component {
       .then(response => response.json())
       .then(response => {
         if (response) {
-          fetch("https://face-recognition-api-pdqc.onrender.com/image", {
+          fetch("https://face-recognition-api-pdqc.onrender.com/image.js", {
             method: "put",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({

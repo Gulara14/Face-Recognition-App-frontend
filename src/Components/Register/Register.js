@@ -23,7 +23,7 @@ class Register extends React.Component {
     }
 
     onSubmitSignIn = () => {
-        fetch("https://face-recognition-api-pdqc.onrender.com/register", {
+        fetch("https://face-recognition-api-pdqc.onrender.com/register.json", {
             method: "post",
             headers: {'Content-Type': "application/json"},
             body: JSON.stringify({

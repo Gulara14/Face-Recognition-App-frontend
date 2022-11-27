@@ -26,7 +26,7 @@ class Register extends React.Component {
         fetch("https://face-recognition-front.onrender.com/register", {
             method: "post",
             headers: ({
-                "Content-Type": "application/json",
+                'Content-Type': "application/json"
                 "Access-Control-Allow-Origin": "*"
             })
             body: JSON.stringify({

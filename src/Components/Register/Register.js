@@ -37,7 +37,7 @@ class Register extends React.Component {
                 if (user.id) {
                     /* eslint-disable react/prop-types */
                     this.props.loadUser(user)
-                    this.props.onRouteChange('home')
+                    this.props.onRouteChange('home');
                 }
             })
             // .catch((error) => console.log(error))

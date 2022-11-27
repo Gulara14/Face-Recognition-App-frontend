@@ -35,7 +35,7 @@ class Register extends React.Component {
                 name: this.state.name
             })
         })
-            .then(response => response.json())
+            .then(response => response.text())
             .then(user => {
                 if (user.id) {
                     /* eslint-disable react/prop-types */

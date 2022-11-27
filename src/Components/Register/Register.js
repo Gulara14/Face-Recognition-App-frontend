@@ -25,10 +25,7 @@ class Register extends React.Component {
     onSubmitSignIn = () => {
         fetch("https://face-recognition-backend.onrender.com/register", {
             method: "post",
-            headers: ({
-                'Content-Type': "application/json",
-                "Access-Control-Allow-Origin": "*",
-            }),
+            headers: {'Content-Type': "application/json"},
             body: JSON.stringify({
                 email: this.state.email,
                 password: this.state.password,
@@ -43,6 +40,9 @@ class Register extends React.Component {
                     this.props.onRouteChange('home');
                 }
             })
+            .catch(error) => {
+                console.log(error);
+            }
     }
 
     render () {

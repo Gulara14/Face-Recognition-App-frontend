@@ -23,7 +23,7 @@ class Register extends React.Component {
     }
 
     onSubmitSignIn = () => {
-        fetch("https://face-recognition-backend.onrender.com/register", {
+        fetch("http://localhost:3000/register", {
             method: "post",
             headers: {'Content-Type': "application/json"},
             body: JSON.stringify({
@@ -32,14 +32,15 @@ class Register extends React.Component {
                 name: this.state.name
             })
         })
-            .then(response => response.text())
+            .then(response => response.json())
             .then(user => {
                 if (user.id) {
                     /* eslint-disable react/prop-types */
                     this.props.loadUser(user)
-                    this.props.onRouteChange('home');
+                    this.props.onRouteChange('home')
                 }
             })
+            .catch((error) => console.log(error))
     }
 
     render () {

@@ -20,7 +20,7 @@ class Signin extends React.Component {
     }
 
     onSubmitSignIn = () => {
-        fetch("hhttps://face-recognition-backend.onrender.com/signin", {
+        fetch("https://face-recognition-backend.onrender.com/signin", {
             method: "post",
             headers: {'Content-Type': "application/json"},
             body: JSON.stringify({

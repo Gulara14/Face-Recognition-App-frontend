@@ -23,9 +23,13 @@ class Register extends React.Component {
     }
 
     onSubmitSignIn = () => {
-        fetch("http://localhost:3000/register", {
+        fetch("https://git.heroku.com/shrouded-mesa-90241.git/register", {
+            // mode: 'no-cors',
             method: "post",
-            headers: {'Content-Type': "application/json"},
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            },
             body: JSON.stringify({
                 email: this.state.email,
                 password: this.state.password,
@@ -37,7 +41,7 @@ class Register extends React.Component {
                 if (user.id) {
                     /* eslint-disable react/prop-types */
                     this.props.loadUser(user)
-                    this.props.onRouteChange('home')
+                    this.props.onRouteChange('home');
                 }
             })
             .catch((error) => console.log(error))

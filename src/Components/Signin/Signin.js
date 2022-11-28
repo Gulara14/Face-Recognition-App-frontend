@@ -20,7 +20,7 @@ class Signin extends React.Component {
     }
 
     onSubmitSignIn = () => {
-        fetch("https://git.heroku.com/shrouded-mesa-90241.git/signin", {
+        fetch("https://shrouded-mesa-90241.herokuapp.com/signin", {
             method: "post",
             headers: {'Content-Type': "application/json"},
             body: JSON.stringify({
